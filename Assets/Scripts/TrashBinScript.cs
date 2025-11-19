@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TrashBinScript : MonoBehaviour
 {
+    public GameManagerScript gms;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,8 @@ public class TrashBinScript : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
-            Debug.Log("point");
+            gms.points += 1;
+            Destroy(other);
         }
     }
 }
