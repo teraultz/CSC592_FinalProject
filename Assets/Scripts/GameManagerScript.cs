@@ -20,8 +20,8 @@ public class GameManagerScript : MonoBehaviour
         textmesh.text = $"Points: {points}";
     }
 
-    public void SpawnBalls()
+    public void Testbutton()
     {
-
+        points += 1;
     }
 }
