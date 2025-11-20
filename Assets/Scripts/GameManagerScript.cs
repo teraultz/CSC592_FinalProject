@@ -7,7 +7,11 @@ public class GameManagerScript : MonoBehaviour
 {
     public int points;
     public TextMeshProUGUI textmesh;
-    
+    public GameObject ballprefab;
+    public Transform spawnpoint1;
+    public Transform spawnpoint2;
+    public Transform spawnpoint3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,8 @@ public class GameManagerScript : MonoBehaviour
 
     public void Testbutton()
     {
-        points += 1;
+        Instantiate(ballprefab, spawnpoint1.position, spawnpoint1.rotation);
+        Instantiate(ballprefab, spawnpoint2.position, spawnpoint2.rotation);
+        Instantiate(ballprefab, spawnpoint3.position, spawnpoint3.rotation);
     }
 }
