@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -11,17 +12,23 @@ public class GameManagerScript : MonoBehaviour
     public Transform spawnpoint1;
     public Transform spawnpoint2;
     public Transform spawnpoint3;
+    private int pointgoal;
 
     // Start is called before the first frame update
     void Start()
     {
         points = 0;
+        pointgoal = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        textmesh.text = $"Points: {points}";
+        textmesh.text = $"Points: {points}/{pointgoal}";
+
+        if (points == pointgoal){
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void Testbutton()

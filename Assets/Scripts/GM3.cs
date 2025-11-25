@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GM2 : MonoBehaviour
+public class GM3 : MonoBehaviour
 {
     public int points;
     public TextMeshProUGUI textmesh;
@@ -18,36 +19,48 @@ public class GM2 : MonoBehaviour
     public float fanspeed = 10f;
     private bool goingUp = true;
 
+    public GameObject binprefab;
+    public Transform spot1;
+    public Transform spot2;
+    public Transform spot3;
+    private Transform[] spots;
+    private float timer = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
         points = 0;
-        pointgoal = 5;
+        pointgoal = 6;
+
+        spots = new Transform[] { spot1, spot2, spot3 };
     }
 
     // Update is called once per frame
     void Update()
     {
+        //CANVAS CODE
         textmesh.text = $"Points: {points}/{pointgoal}";
 
+        //FAN CODE
         float y = fan.transform.eulerAngles.y;
 
-        // --- Change direction at limits ---
-        if (y >= 359f || y < 1f)      // 360° wrap-around handled
-            goingUp = false;          // start rotating DOWN
+        if (y >= 359f || y < 1f)     
+            goingUp = false;          
 
         if (y <= 275f)
-            goingUp = true;           // rotate UP again
+            goingUp = true;           
 
-        // --- Rotate ---
         if (goingUp)
             fan.transform.Rotate(0, fanspeed * Time.deltaTime, 0);
         else
             fan.transform.Rotate(0, -fanspeed * Time.deltaTime, 0);
 
-        if (points == pointgoal)
+        //TELEPORTING CODE
+        timer += Time.deltaTime;
+        if (timer >= 5f)  
         {
-            SceneManager.LoadScene(2);
+            MoveBin();
+            timer = 0f; 
         }
     }
 
@@ -56,5 +69,11 @@ public class GM2 : MonoBehaviour
         Instantiate(ballprefab, spawnpoint1.position, spawnpoint1.rotation);
         Instantiate(ballprefab, spawnpoint2.position, spawnpoint2.rotation);
         Instantiate(ballprefab, spawnpoint3.position, spawnpoint3.rotation);
+    }
+
+    void MoveBin()
+    {
+        int index = UnityEngine.Random.Range(0, spots.Length); 
+        binprefab.transform.position = spots[index].position;
     }
 }
