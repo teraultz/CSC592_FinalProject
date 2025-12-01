@@ -22,7 +22,7 @@ public class GM2 : MonoBehaviour
     void Start()
     {
         points = 0;
-        pointgoal = 5;
+        pointgoal = 1;
     }
 
     // Update is called once per frame

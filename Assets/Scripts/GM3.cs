@@ -1,9 +1,11 @@
+using Oculus.Interaction.Samples;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GM3 : MonoBehaviour
 {
@@ -26,13 +28,18 @@ public class GM3 : MonoBehaviour
     private Transform[] spots;
     private float timer = 0f;
 
+    public GameObject victorycanvas;
+    public GameObject scorecountcanvas;
+
     // Start is called before the first frame update
     void Start()
     {
         points = 0;
-        pointgoal = 6;
+        pointgoal = 1;
 
         spots = new Transform[] { spot1, spot2, spot3 };
+
+        victorycanvas.SetActive(true);
     }
 
     // Update is called once per frame
@@ -40,6 +47,14 @@ public class GM3 : MonoBehaviour
     {
         //CANVAS CODE
         textmesh.text = $"Points: {points}/{pointgoal}";
+
+        if (points == pointgoal)
+        {
+            scorecountcanvas.SetActive(false);
+            victorycanvas.SetActive(true);
+            FinishGame();
+
+        }
 
         //FAN CODE
         float y = fan.transform.eulerAngles.y;
@@ -75,5 +90,10 @@ public class GM3 : MonoBehaviour
     {
         int index = UnityEngine.Random.Range(0, spots.Length); 
         binprefab.transform.position = spots[index].position;
+    }
+
+    public void FinishGame()
+    {
+        SceneManager.LoadScene(3);
     }
 }

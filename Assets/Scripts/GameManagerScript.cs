@@ -18,7 +18,7 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         points = 0;
-        pointgoal = 3;
+        pointgoal = 1;
     }
 
     // Update is called once per frame

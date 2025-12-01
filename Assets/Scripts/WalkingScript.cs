@@ -24,7 +24,7 @@ public class WalkingScript : MonoBehaviour
         float time = Mathf.PingPong(Time.time * speed, 1.0f);
         transform.position = Vector3.Lerp(pointA, pointB, time);
 
-        float threshold = 0.01f;
+        float threshold = 0.05f;
 
         // Check point A
         if (Vector3.Distance(transform.position, pointA) < threshold)
