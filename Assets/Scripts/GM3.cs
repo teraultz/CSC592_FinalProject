@@ -52,7 +52,7 @@ public class GM3 : MonoBehaviour
         {
             scorecountcanvas.SetActive(false);
             victorycanvas.SetActive(true);
-            FinishGame();
+            //FinishGame();
 
         }
 
