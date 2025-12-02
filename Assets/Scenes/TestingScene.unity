@@ -147,12 +147,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3674779510623503884, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: _defaultHeight
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674779510623503884, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: _gravityFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674779510623503884, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: _groundDamping
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674779510623503884, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
       propertyPath: _autoUpdateHeight
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3674779510623503884, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
       propertyPath: _maxStartGroundDistance
-      value: 0.1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674779510623503884, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: _maxWallPenetrationDistance
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784737342167113422, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: _requireOvrHands
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3992263804457921966, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -162,9 +182,45 @@ PrefabInstance:
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Testbutton
       objectReference: {fileID: 0}
+    - target: {fileID: 4408510589143345124, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408510589143345124, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408510589143345124, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.076
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868391180406048368, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868391180406048368, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868391180406048368, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077235770792122401, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077235770792122401, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: m_ImplicitCom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077235770792122401, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6542034827411370021, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.084
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6542034827411370021, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -172,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542034827411370021, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.31
+      value: -0.422
       objectReference: {fileID: 0}
     - target: {fileID: 6542034827411370021, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -209,7 +265,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6810889770884545813, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 447977684}
   m_SourcePrefab: {fileID: 100100000, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
 --- !u!20 &388083117 stripped
 Camera:
@@ -227,6 +286,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3582e49821098c049ba9f746dec0f9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &447977679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6810889770884545813, guid: 72364a16ef7f881419e7d39836a978b0, type: 3}
+  m_PrefabInstance: {fileID: 388083116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &447977684
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447977679}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1916953974655270940, guid: f1cd6800d51724d4291ee22764292e86, type: 3}
 --- !u!1001 &1019371327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -776,6 +862,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 933667771473015568, guid: cc3a7d663a10b374e9999bab87207478, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.672
+      objectReference: {fileID: 0}
     - target: {fileID: 1709920266458475451, guid: cc3a7d663a10b374e9999bab87207478, type: 3}
       propertyPath: m_Name
       value: OfficeRoom

@@ -39,7 +39,7 @@ public class GM3 : MonoBehaviour
 
         spots = new Transform[] { spot1, spot2, spot3 };
 
-        victorycanvas.SetActive(true);
+        victorycanvas.SetActive(false);
     }
 
     // Update is called once per frame
