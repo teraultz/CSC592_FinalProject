@@ -18,11 +18,14 @@ public class GM2 : MonoBehaviour
     public float fanspeed = 10f;
     private bool goingUp = true;
 
+    public GameObject victorycanvas;
+
     // Start is called before the first frame update
     void Start()
     {
         points = 0;
         pointgoal = 1;
+        victorycanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,7 +50,8 @@ public class GM2 : MonoBehaviour
 
         if (points == pointgoal)
         {
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
+            victorycanvas.SetActive(true);
         }
     }
 
@@ -56,5 +60,10 @@ public class GM2 : MonoBehaviour
         Instantiate(ballprefab, spawnpoint1.position, spawnpoint1.rotation);
         Instantiate(ballprefab, spawnpoint2.position, spawnpoint2.rotation);
         Instantiate(ballprefab, spawnpoint3.position, spawnpoint3.rotation);
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(2);
     }
 }
