@@ -18,8 +18,12 @@ public class GM3 : MonoBehaviour
     private int pointgoal;
 
     public GameObject fan;
+    public GameObject fan2;
+    public GameObject fan3;
     public float fanspeed = 10f;
     private bool goingUp = true;
+    private bool goingUp2 = true;
+    private bool goingUp3 = true;
 
     public GameObject binprefab;
     public Transform spot1;
@@ -56,7 +60,7 @@ public class GM3 : MonoBehaviour
 
         }
 
-        //FAN CODE
+        //FAN1 CODE
         float y = fan.transform.eulerAngles.y;
 
         if (y >= 359f || y < 1f)     
@@ -69,6 +73,47 @@ public class GM3 : MonoBehaviour
             fan.transform.Rotate(0, fanspeed * Time.deltaTime, 0);
         else
             fan.transform.Rotate(0, -fanspeed * Time.deltaTime, 0);
+
+        //FAN2 CODE
+        float yy = fan2.transform.eulerAngles.y;
+
+        if (yy > 180f) yy -= 360f;
+
+        if (yy >= 90f)
+            goingUp2 = false;
+
+        if (yy <= 0f)
+            goingUp2 = true;
+
+        if (goingUp2)
+            fan2.transform.Rotate(0, fanspeed * Time.deltaTime, 0);
+        else
+            fan2.transform.Rotate(0, -fanspeed * Time.deltaTime, 0);
+
+        //FAN3 CODE
+        float yyy = fan3.transform.eulerAngles.y;
+
+        if (yyy > 180f) 
+            yyy -= 360f;
+
+        if (yyy >= 179f)
+            goingUp3 = false;
+
+        if (yyy <= 90f)
+            goingUp3 = true;
+
+        if (goingUp3)
+            fan3.transform.Rotate(0, fanspeed * Time.deltaTime, 0);
+        else
+            fan3.transform.Rotate(0, -fanspeed * Time.deltaTime, 0);
+
+        //TELEPORTING CODE
+        timer += Time.deltaTime;
+        if (timer >= 5f)
+        {
+            MoveBin();
+            timer = 0f;
+        }
 
         //TELEPORTING CODE
         timer += Time.deltaTime;
