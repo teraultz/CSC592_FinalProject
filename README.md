@@ -9,6 +9,8 @@ Office Paper Toss is originally a mobile app game in which the player, acting as
 
 [Office Paper Toss VR.docx](https://github.com/user-attachments/files/24039374/Office.Paper.Toss.VR.docx)
 
+[Vr presentation office paper toss.pptx](https://github.com/user-attachments/files/24040514/Vr.presentation.office.paper.toss.pptx)
+
 
 ## Video Demo
 
