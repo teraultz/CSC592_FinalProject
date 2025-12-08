@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrashBinScript : MonoBehaviour
 {
     public GameManagerScript gms;
+    public AudioSource pointaudio;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class TrashBinScript : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             gms.points += 1;
+            pointaudio.Play();
             Destroy(other);
         }
     }

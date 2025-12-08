@@ -5,6 +5,7 @@ using UnityEngine;
 public class TB2 : MonoBehaviour
 {
     public GM2 gms;
+    public AudioSource pointaudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class TB2 : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             gms.points += 1;
+            pointaudio.Play();
             Destroy(other);
         }
     }

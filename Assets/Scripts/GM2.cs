@@ -19,6 +19,7 @@ public class GM2 : MonoBehaviour
     private bool goingUp = true;
 
     public GameObject victorycanvas;
+    public AudioSource buttonpressaudio;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,7 @@ public class GM2 : MonoBehaviour
         Instantiate(ballprefab, spawnpoint1.position, spawnpoint1.rotation);
         Instantiate(ballprefab, spawnpoint2.position, spawnpoint2.rotation);
         Instantiate(ballprefab, spawnpoint3.position, spawnpoint3.rotation);
+        buttonpressaudio.Play();
     }
 
     public void NextLevel()

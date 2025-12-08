@@ -16,6 +16,8 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject victorycanvas;
 
+    public AudioSource buttonpressaudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,6 @@ public class GameManagerScript : MonoBehaviour
 
         if (points == pointgoal){
             victorycanvas.SetActive(true);
-            //SceneManager.LoadScene(1);
         }
     }
 
@@ -40,6 +41,7 @@ public class GameManagerScript : MonoBehaviour
         Instantiate(ballprefab, spawnpoint1.position, spawnpoint1.rotation);
         Instantiate(ballprefab, spawnpoint2.position, spawnpoint2.rotation);
         Instantiate(ballprefab, spawnpoint3.position, spawnpoint3.rotation);
+        buttonpressaudio.Play();
     }
 
     public void NextLevel()

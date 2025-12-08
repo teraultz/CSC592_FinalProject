@@ -34,6 +34,8 @@ public class GM3 : MonoBehaviour
 
     public GameObject victorycanvas;
     public GameObject scorecountcanvas;
+    public AudioSource buttonpressaudio;
+    public AudioSource teleport;
 
     // Start is called before the first frame update
     void Start()
@@ -112,6 +114,7 @@ public class GM3 : MonoBehaviour
         if (timer >= 5f)
         {
             MoveBin();
+            teleport.Play();
             timer = 0f;
         }
 
@@ -120,6 +123,7 @@ public class GM3 : MonoBehaviour
         if (timer >= 5f)  
         {
             MoveBin();
+            teleport.Play();
             timer = 0f; 
         }
     }
@@ -129,6 +133,7 @@ public class GM3 : MonoBehaviour
         Instantiate(ballprefab, spawnpoint1.position, spawnpoint1.rotation);
         Instantiate(ballprefab, spawnpoint2.position, spawnpoint2.rotation);
         Instantiate(ballprefab, spawnpoint3.position, spawnpoint3.rotation);
+        buttonpressaudio.Play();
     }
 
     void MoveBin()
