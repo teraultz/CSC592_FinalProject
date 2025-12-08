@@ -22,7 +22,7 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         points = 0;
-        pointgoal = 1;
+        pointgoal = 3;
         victorycanvas.SetActive(false);
     }
 

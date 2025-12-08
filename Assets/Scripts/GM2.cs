@@ -25,7 +25,7 @@ public class GM2 : MonoBehaviour
     void Start()
     {
         points = 0;
-        pointgoal = 1;
+        pointgoal = 4;
         victorycanvas.SetActive(false);
     }
 

@@ -41,7 +41,7 @@ public class GM3 : MonoBehaviour
     void Start()
     {
         points = 0;
-        pointgoal = 1;
+        pointgoal = 5;
 
         spots = new Transform[] { spot1, spot2, spot3 };
 
@@ -111,7 +111,7 @@ public class GM3 : MonoBehaviour
 
         //TELEPORTING CODE
         timer += Time.deltaTime;
-        if (timer >= 5f)
+        if (timer >= 10f)
         {
             MoveBin();
             teleport.Play();
@@ -120,7 +120,7 @@ public class GM3 : MonoBehaviour
 
         //TELEPORTING CODE
         timer += Time.deltaTime;
-        if (timer >= 5f)  
+        if (timer >= 10f)  
         {
             MoveBin();
             teleport.Play();
