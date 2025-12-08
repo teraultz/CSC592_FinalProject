@@ -9528,7 +9528,7 @@ Transform:
   m_GameObject: {fileID: 1952892173}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3532424, y: 2.580297, z: -6.5408}
+  m_LocalPosition: {x: 0.353, y: 2.580297, z: -6.376}
   m_LocalScale: {x: 1, y: 1.0685587, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9886,7 +9886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 0
   textmesh: {fileID: 1783950310}
-  ballprefab: {fileID: 3762356092975335071, guid: e880e0aa9322d3342b9b6aed0f5bc6dc, type: 3}
+  ballprefab: {fileID: 5071039912143532138, guid: 9cf9fbed402851548b9c9bce2f0e6507, type: 3}
   spawnpoint1: {fileID: 1171832897}
   spawnpoint2: {fileID: 1569045519}
   spawnpoint3: {fileID: 36688594}
